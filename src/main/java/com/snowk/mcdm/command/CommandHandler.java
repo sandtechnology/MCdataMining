@@ -17,30 +17,30 @@ public class CommandHandler extends CommandFramework {
 	public void execute(CommandSender sender, String label, String[] args) {
 		
 		if (args.length == 0) {
-        	sender.sendMessage("¡ìb====== MCdataMining v1.0 By:Bear ======");
-            sender.sendMessage("¡ìb/dm reload ¡ìf-¡ìe ÖØÔØ²å¼ş ¡ìb¿ì½İÖ¸Áî¡ì6/dm r");
-            sender.sendMessage("¡ìb/dm analysis ¡ìf-¡ìe ²é¿´·şÎñÆ÷Í³¼Æ·ÖÎöÏµÍ³Ê¹ÓÃ°ïÖú ¡ìb¿ì½İÖ¸Áî¡ì6/dm a");
-            sender.sendMessage("¡ìb/dm dbscan ¡ìf-¡ìe ²é¿´·şÎñÆ÷¾ÛÀàÏµÍ³Ê¹ÓÃ°ïÖú ¡ìb¿ì½İÖ¸Áî¡ì6/dm d");
-            sender.sendMessage("¡ìb/dm t <Player> ¡ìf-¡ìe °ÑÖ¸¶¨Íæ¼Ò´«ËÍµ½Éí±ß");
+        	sender.sendMessage("Â§b====== MCdataMining v1.0 By:Bear ======");
+            sender.sendMessage("Â§b/dm reload Â§f-Â§e é‡è½½æ’ä»¶ Â§bå¿«æ·æŒ‡ä»¤Â§6/dm r");
+            sender.sendMessage("Â§b/dm analysis Â§f-Â§e æŸ¥çœ‹æœåŠ¡å™¨ç»Ÿè®¡åˆ†æç³»ç»Ÿä½¿ç”¨å¸®åŠ© Â§bå¿«æ·æŒ‡ä»¤Â§6/dm a");
+            sender.sendMessage("Â§b/dm dbscan Â§f-Â§e æŸ¥çœ‹æœåŠ¡å™¨èšç±»ç³»ç»Ÿä½¿ç”¨å¸®åŠ© Â§bå¿«æ·æŒ‡ä»¤Â§6/dm d");
+            sender.sendMessage("Â§b/dm t <Player> Â§f-Â§e æŠŠæŒ‡å®šç©å®¶ä¼ é€åˆ°èº«è¾¹");
             
         } else if (args[0].equalsIgnoreCase("reload") || args[0].equalsIgnoreCase("r")) {
 	        if (sender.isOp() || sender.hasPermission("snowkfix.reload")) {
-	        	sender.sendMessage("¡ìb[Snowk]¡ìeµ±Ç°°æ±¾ÎŞĞè¼ÓÔØconfig£¬ÈôÒ»¶¨ĞèÒªÖØÔØÇëÓÚyumÊµÏÖÈÈ¼ÓÔØ");
+	        	sender.sendMessage("Â§b[Snowk]Â§eå½“å‰ç‰ˆæœ¬æ— éœ€åŠ è½½configï¼Œè‹¥ä¸€å®šéœ€è¦é‡è½½è¯·äºyumå®ç°çƒ­åŠ è½½");
 	        } 
 
         } else if (args[0].equalsIgnoreCase("t") && args[1] != null) {
         	if (sender.isOp() && sender instanceof Player) {
         		Location loc = ((Player) sender).getLocation();
         		Player target = Bukkit.getPlayerExact(args[1]);
-        		sender.sendMessage("¡ì6ÕıÔÚ´«ËÍ...");
+        		sender.sendMessage("Â§6æ­£åœ¨ä¼ é€...");
         		target.teleport(loc);
-        	} else {sender.sendMessage("È¨ÏŞ²»×ã£¬ÇëÈ·¶¨ÄúÊÇ·ñÎªop£¬ÇÒ²»¿ÉÓÚ¿ØÖÆÌ¨Ö´ĞĞ¡£");}
+        	} else {sender.sendMessage("æƒé™ä¸è¶³ï¼Œè¯·ç¡®å®šæ‚¨æ˜¯å¦ä¸ºopï¼Œä¸”ä¸å¯äºæ§åˆ¶å°æ‰§è¡Œã€‚");}
         	
         } else if (args[0].equalsIgnoreCase("analysis") || args[0].equalsIgnoreCase("a")) {
-        	sender.sendMessage("¡ìb====== MCdataMining v1.0 By:Bear ======");
-            sender.sendMessage("¡ìb/dm analysis mob ¡ìf-¡ìe ¼ÆÊıÍ³¼ÆËùÓĞÊÀ½çµÄËùÓĞÉúÎï ¡ìb¿ì½İÖ¸Áî¡ì6/dm a m");
-            sender.sendMessage("¡ìb/dm analysis drop ¡ìf-¡ìe ¼ÆÊıÍ³¼ÆËùÓĞÊÀ½çµÄËùÓĞµôÂäÎï ¡ìb¿ì½İÖ¸Áî¡ì6/dm a d");
-            sender.sendMessage("¡ìb/dm analysis tile ¡ìf-¡ìe ¼ÆÊıÍ³¼ÆËùÓĞÊÀ½çµ±Ç°¼ÓÔØµÄËùÓĞtiles·½¿é ¡ìb¿ì½İÖ¸Áî¡ì6/dm a t");
+        	sender.sendMessage("Â§b====== MCdataMining v1.0 By:Bear ======");
+            sender.sendMessage("Â§b/dm analysis mob Â§f-Â§e è®¡æ•°ç»Ÿè®¡æ‰€æœ‰ä¸–ç•Œçš„æ‰€æœ‰ç”Ÿç‰© Â§bå¿«æ·æŒ‡ä»¤Â§6/dm a m");
+            sender.sendMessage("Â§b/dm analysis drop Â§f-Â§e è®¡æ•°ç»Ÿè®¡æ‰€æœ‰ä¸–ç•Œçš„æ‰€æœ‰æ‰è½ç‰© Â§bå¿«æ·æŒ‡ä»¤Â§6/dm a d");
+            sender.sendMessage("Â§b/dm analysis tile Â§f-Â§e è®¡æ•°ç»Ÿè®¡æ‰€æœ‰ä¸–ç•Œå½“å‰åŠ è½½çš„æ‰€æœ‰tilesæ–¹å— Â§bå¿«æ·æŒ‡ä»¤Â§6/dm a t");
             if (args[1].equalsIgnoreCase("mob") || args[1].equalsIgnoreCase("m")) {
             	doAnalysis.run(sender,"mob",true);
             } else if (args[1].equalsIgnoreCase("drop") || args[1].equalsIgnoreCase("d")) {
@@ -50,14 +50,14 @@ public class CommandHandler extends CommandFramework {
             }
             
         } else if (args[0].equalsIgnoreCase("dbscan") || args[0].equalsIgnoreCase("d")) {
-        	sender.sendMessage("¡ìb====== MCdataMining v1.0 By:Bear ======");
-            sender.sendMessage("¡ìb/dm dbscan mob <world>  ¡ìf-¡ìe ¾ÛÀàÉúÎï²¢Ñ°ÕÒÃÜ¼¯ÖĞĞÄ ¡ìb¿ì½İÖ¸Áî¡ì6/dm d m <w>");
-            sender.sendMessage("¡ìb/dm dbscan drop <world>  ¡ìf-¡ìe ¾ÛÀàµôÂäÎï²¢Ñ°ÕÒÃÜ¼¯ÖĞĞÄ ¡ìb¿ì½İÖ¸Áî¡ì6/dm d d <w>");
-            sender.sendMessage("¡ìb/dm dbscan tile <world>  ¡ìf-¡ìe ¾ÛÀàtiles²¢Ñ°ÕÒÃÜ¼¯ÖĞĞÄ ¡ìb¿ì½İÖ¸Áî¡ì6/dm d t <w>");
+        	sender.sendMessage("Â§b====== MCdataMining v1.0 By:Bear ======");
+            sender.sendMessage("Â§b/dm dbscan mob <world>  Â§f-Â§e èšç±»ç”Ÿç‰©å¹¶å¯»æ‰¾å¯†é›†ä¸­å¿ƒ Â§bå¿«æ·æŒ‡ä»¤Â§6/dm d m <w>");
+            sender.sendMessage("Â§b/dm dbscan drop <world>  Â§f-Â§e èšç±»æ‰è½ç‰©å¹¶å¯»æ‰¾å¯†é›†ä¸­å¿ƒ Â§bå¿«æ·æŒ‡ä»¤Â§6/dm d d <w>");
+            sender.sendMessage("Â§b/dm dbscan tile <world>  Â§f-Â§e èšç±»tileså¹¶å¯»æ‰¾å¯†é›†ä¸­å¿ƒ Â§bå¿«æ·æŒ‡ä»¤Â§6/dm d t <w>");
             if (args[1].equalsIgnoreCase("mob") || args[1].equalsIgnoreCase("m")) {
-            	doDBSCAN.run(sender,args[2],doAnalysis.run(sender,"mob",false),"ÉúÎïÀà");
+            	doDBSCAN.run(sender,args[2],doAnalysis.run(sender,"mob",false),"ç”Ÿç‰©ç±»");
             } else if (args[1].equalsIgnoreCase("drop") || args[1].equalsIgnoreCase("d")) {
-            	doDBSCAN.run(sender,args[2],doAnalysis.run(sender,"drop",false),"µôÂäÎï");
+            	doDBSCAN.run(sender,args[2],doAnalysis.run(sender,"drop",false),"æ‰è½ç‰©");
             } else if (args[1].equalsIgnoreCase("tiles") || args[1].equalsIgnoreCase("t")) {
             	doDBSCAN.run(sender,args[2],doAnalysis.run(sender,"tiles",false),"tiles");
             }

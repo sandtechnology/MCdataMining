@@ -16,14 +16,14 @@ public class mcdm extends JavaPlugin{
     public void onEnable() {
     	snowkPlugin = this;
     	Config.loadConfig("config.yml");
-    	getLogger().info("MCdataMiningÒÑÆôÓÃ - By:Bear");
-    	getLogger().info("Ô´ÂëÓÚ£ºhttps://github.com/i493052739 ¾´Çë¹Ø×¢¸üĞÂ£¡");
+    	getLogger().info("MCdataMiningå·²å¯ç”¨ - By:Bear");
+    	getLogger().info("æºç äºï¼šhttps://github.com/i493052739 æ•¬è¯·å…³æ³¨æ›´æ–°ï¼");
     	CommandFramework.register(this, new CommandHandler("dm"));
     }
     
     @Override
     public void onDisable() {
-    	getLogger().info("MCdataMiningÒÑ¹Ø±Õ");
+    	getLogger().info("MCdataMiningå·²å…³é—­");
     	
     }
     	
