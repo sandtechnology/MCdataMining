@@ -16,15 +16,15 @@ public class doDBSCAN {
 		ArrayList<double[]> arrayXYZ = new ArrayList<>();
 		
 		for (Location sample : locationList) {
-			if (sample.getWorld().getName().toString().equals(worldInput)) {
+			if (sample.getWorld().getName().equals(worldInput)) {
 				int ATRIBUTE_NUMBER = 3; //x y z
-				
-				String [] xyz = (sample.getX() + "," + sample.getY() + "," + sample.getZ()).split(",");
+
+				String[] xyz = (sample.getX() + "," + sample.getY() + "," + sample.getZ()).split(",");
 				double[] array = new double[ATRIBUTE_NUMBER];
-	            for (int i = 0; i < ATRIBUTE_NUMBER; i++) {
-	                array[i] = Double.parseDouble(xyz[i]);
-	            }
-	            arrayXYZ.add(array);
+				for (int i = 0; i < ATRIBUTE_NUMBER; i++) {
+					array[i] = Double.parseDouble(xyz[i]);
+				}
+				arrayXYZ.add(array);
 			}
 		}
 		if (locationList.size() == 0) {

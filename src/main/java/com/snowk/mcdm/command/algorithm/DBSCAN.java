@@ -14,24 +14,24 @@ import java.util.List;
 import java.util.Map;
  
 public class DBSCAN {
-	
-    private static int ATRIBUTE_NUMBER = 3; // x y z
-    //邻域半径
-    private double epsilon = 0.3;
-    //邻域内最小样本数量
-    private int minimumNumberOfClusterMembers = 4;
-    //数据集
-    private ArrayList<double[]> inputValues = null;
-    
-    public static void main(CommandSender sender, ArrayList<double[]> arrayXYZ, List<Location> locationList, String task) {
-        DBSCAN one = new DBSCAN();
 
-        one.inputValues = arrayXYZ;
-        boolean doNormalize = true;
+	private static final int ATRIBUTE_NUMBER = 3; // x y z
+	//邻域半径
+	private final double epsilon = 0.3;
+	//邻域内最小样本数量
+	private final int minimumNumberOfClusterMembers = 4;
+	//数据集
+	private ArrayList<double[]> inputValues = null;
+
+	public static void main(CommandSender sender, ArrayList<double[]> arrayXYZ, List<Location> locationList, String task) {
+		DBSCAN one = new DBSCAN();
+
+		one.inputValues = arrayXYZ;
+		boolean doNormalize = true;
 
 		sender.sendMessage("§b开始执行§a§l DBSCAN §b聚类算法... §d(" + task + ")");
 
-        int[] labels = one.performClustering(sender, doNormalize);
+		int[] labels = one.performClustering(sender, doNormalize);
         printResult(sender, labels, locationList);
     }
     
@@ -67,33 +67,33 @@ public class DBSCAN {
     			omega.put(index, indices);
     			//直到核心对象队列为空迭代停止
     			do {
-    				//从核心对象列表中选择一个
-    				int index_c = omega.entrySet().iterator().next().getKey();
-    				labels[index_c] = k;
-    				unvisitedIndices.remove(new Integer(index_c));
-    				//获取邻域
-    				List<Integer> neighborIndices = omega.get(index_c);
-    				//从Omega中移除
-    				omega.remove(index_c);
-        			//遍历邻域
-        			for(int index_ : neighborIndices) {
-        				//未被访问或者之前是噪音
-        				if(labels[index_] < 1) {
-        					labels[index_] = k;
-        					unvisitedIndices.remove(new Integer(index_));
-        					//测试是否是核心对象,如果是加入到队列中
-            				List<Integer> index_OfNeighborIndices = coreObjectTest(index_);
-            				if(index_OfNeighborIndices.size() >= minimumNumberOfClusterMembers)
-            					omega.put(index_, index_OfNeighborIndices);
-        				}
+					//从核心对象列表中选择一个
+					int index_c = omega.entrySet().iterator().next().getKey();
+					labels[index_c] = k;
+					unvisitedIndices.remove(Integer.valueOf(index_c));
+					//获取邻域
+					List<Integer> neighborIndices = omega.get(index_c);
+					//从Omega中移除
+					omega.remove(index_c);
+					//遍历邻域
+					for (int index_ : neighborIndices) {
+						//未被访问或者之前是噪音
+						if (labels[index_] < 1) {
+							labels[index_] = k;
+							unvisitedIndices.remove(Integer.valueOf(index_));
+							//测试是否是核心对象,如果是加入到队列中
+							List<Integer> index_OfNeighborIndices = coreObjectTest(index_);
+							if (index_OfNeighborIndices.size() >= minimumNumberOfClusterMembers)
+								omega.put(index_, index_OfNeighborIndices);
+						}
         			}
     			}
     			while(omega.size() != 0);
     		} else {
-    			//噪音
-    			labels[index] = -1;
-    			unvisitedIndices.remove(new Integer(index));
-    		}
+				//噪音
+				labels[index] = -1;
+				unvisitedIndices.remove(Integer.valueOf(index));
+			}
     		iter++;
     	}
     	sender.sendMessage("§e迭代次数:§f§l " + iter);
@@ -167,26 +167,23 @@ public class DBSCAN {
     		maxs[i] = Double.MIN_VALUE;
     	}
     	for(int i = 0; i < ATRIBUTE_NUMBER; i++) {
-    		for(int j = 0; j < inputValues.size();j++) {
-    			mins[i] = inputValues.get(j)[i] < mins[i] ? inputValues.get(j)[i] : mins[i];
-    			maxs[i] = inputValues.get(j)[i] > maxs[i] ? inputValues.get(j)[i] : maxs[i];
-    		}
-    	}
+			for (double[] inputValue : inputValues) {
+				mins[i] = Math.min(inputValue[i], mins[i]);
+				maxs[i] = Math.max(inputValue[i], maxs[i]);
+			}
+		}
     	double[] maxsReduceMins = new double[ATRIBUTE_NUMBER];
     	for(int i = 0; i < ATRIBUTE_NUMBER;i++) {
     		maxsReduceMins[i] = maxs[i] - mins[i];
     	}
     	for(int i = 0; i < ATRIBUTE_NUMBER; i++) {
-    		for(int j = 0; j < inputValues.size();j++) {
-    			inputValues.get(j)[i] = (inputValues.get(j)[i] - mins[i])/(maxsReduceMins[i]);
-    		}
-    	}
+			for (double[] inputValue : inputValues) {
+				inputValue[i] = (inputValue[i] - mins[i]) / (maxsReduceMins[i]);
+			}
+		}
     }
     /**
      * 欧式距离
-     * @param v1
-     * @param v2
-     * @return
      */
     public double distance(double[] v1, double[] v2) {
 		double sum = 0;

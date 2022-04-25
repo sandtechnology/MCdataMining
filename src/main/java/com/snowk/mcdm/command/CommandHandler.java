@@ -28,11 +28,12 @@ public class CommandHandler extends CommandFramework {
 
         } else if (args[0].equalsIgnoreCase("t") && args[1] != null) {
         	if (sender.isOp() && sender instanceof Player) {
-        		Location loc = ((Player) sender).getLocation();
-        		Player target = Bukkit.getPlayerExact(args[1]);
-        		sender.sendMessage("§6正在传送...");
-        		target.teleport(loc);
-        	} else {sender.sendMessage("权限不足，请确定您是否为op，且不可于控制台执行。");}
+                Location loc = ((Player) sender).getLocation();
+                Player target = Bukkit.getPlayerExact(args[1]);
+                sender.sendMessage("§6正在传送...");
+                if (target != null)
+                    target.teleport(loc);
+            } else {sender.sendMessage("权限不足，请确定您是否为op，且不可于控制台执行。");}
         	
         } else if (args[0].equalsIgnoreCase("analysis") || args[0].equalsIgnoreCase("a")) {
         	sender.sendMessage("§b====== MCdataMining v1.0 By:Bear ======");

@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class CommandFramework implements CommandExecutor {
 	
-	private String label;
+	private final String label;
 	public abstract void execute(CommandSender commandSender, String str, String[] strArr);
 	
     public CommandFramework(String label) {

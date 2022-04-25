@@ -4,8 +4,11 @@ import com.snowk.mcdm.mcdm;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.*;
-import java.nio.charset.Charset;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Config {
@@ -19,12 +22,8 @@ public class Config {
 		try {
 			FileInputStream fileinputstream = new FileInputStream(file);
 			YamlConfiguration config = new YamlConfiguration();
-			config.load(new InputStreamReader(fileinputstream, Charset.forName("UTF-8")));			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InvalidConfigurationException e) {
+			config.load(new InputStreamReader(fileinputstream, StandardCharsets.UTF_8));
+		} catch (InvalidConfigurationException | IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -33,7 +32,7 @@ public class Config {
 		return mcdm.snowkPlugin.getConfig().getDouble(label);
 	}
 	public static String getString(String label) {
-		return mcdm.snowkPlugin.getConfig().getString(label).replaceAll("&", "§");
+		return mcdm.snowkPlugin.getConfig().getString(label, "").replaceAll("&", "§");
 	}
 	public static boolean getBoolean(String label) {
 		return mcdm.snowkPlugin.getConfig().getBoolean(label);
