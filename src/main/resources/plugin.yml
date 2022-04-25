@@ -1,7 +1,6 @@
 name: MCdataMining
-main: com.snowk.mcdm.mcdm
+main: com.snowk.mcdm.MCDM
 version: 1.0
-api-version: 1.12
 
 commands:
   dm:
