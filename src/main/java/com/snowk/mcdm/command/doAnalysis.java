@@ -48,9 +48,9 @@ public class doAnalysis {
 	    		}
 	   			//report statistical result to server
 	    		if (report) {
-		    		sender.sendMessage("ÊÀ½ç: " + w.getName() + " ÖĞ´æÔÚ " + count + " ¸öÉúÎïÊµÌå");
+		    		sender.sendMessage("ä¸–ç•Œ: " + w.getName() + " ä¸­å­˜åœ¨ " + count + " ä¸ªç”Ÿç‰©å®ä½“");
 					for (Map.Entry<String, Integer> entry : entityMap.entrySet()) {
-						sender.sendMessage("ÉúÎï: " + entry.getKey() + ", ×ÜÊı: " + entry.getValue());
+						sender.sendMessage("ç”Ÿç‰©: " + entry.getKey() + ", æ€»æ•°: " + entry.getValue());
 					}
 					sender.sendMessage("=====================================");
 					entityMap.clear(); // clear for the next world
@@ -81,9 +81,9 @@ public class doAnalysis {
 	    		}
 	   			//report statistical result to server
 	    		if (report) {
-		    		sender.sendMessage("ÊÀ½ç: " + w.getName() + " ÖĞ´æÔÚ " + count + " ¸öµôÂäÎïÊµÌå");
+		    		sender.sendMessage("ä¸–ç•Œ: " + w.getName() + " ä¸­å­˜åœ¨ " + count + " ä¸ªæ‰è½ç‰©å®ä½“");
 					for (Map.Entry<String, Integer> entry : entityMap.entrySet()) {
-						sender.sendMessage("µôÂäÎï: " + entry.getKey() + ", ×ÜÊı: " + entry.getValue());
+						sender.sendMessage("æ‰è½ç‰©: " + entry.getKey() + ", æ€»æ•°: " + entry.getValue());
 					}
 					sender.sendMessage("=====================================");
 					entityMap.clear(); // clear for the next world
@@ -113,9 +113,9 @@ public class doAnalysis {
 				}
 	   			//report statistical result to server
 	    		if (report) {
-					sender.sendMessage("ÊÀ½ç: " + w.getName() + " ÖĞ´æÔÚ " + count + " ¸ötiles·½¿é");
+					sender.sendMessage("ä¸–ç•Œ: " + w.getName() + " ä¸­å­˜åœ¨ " + count + " ä¸ªtilesæ–¹å—");
 					for (Map.Entry<String, Integer> entry : tileMap.entrySet()) {
-						sender.sendMessage("tiles: " + entry.getKey() + ", ×ÜÊı: " + entry.getValue());
+						sender.sendMessage("tiles: " + entry.getKey() + ", æ€»æ•°: " + entry.getValue());
 					}
 					sender.sendMessage("=====================================");
 					tileMap.clear(); // clear for the next world

@@ -29,9 +29,9 @@ public class doDBSCAN {
 			}
 		}
 		if (locationList.size() == 0) {
-			sender.sendMessage("¡ìb[Snowk]¡ìeÎ´ËÑË÷µ½½á¹û£¬ÇëÈ·ÈÏÊÀ½çÊÇ·ñÒÑ¿ªÆô");
+			sender.sendMessage("Â§b[Snowk]Â§eæœªæœç´¢åˆ°ç»“æœï¼Œè¯·ç¡®è®¤ä¸–ç•Œæ˜¯å¦å·²å¼€å¯");
 		} else if (arrayXYZ.size() == 0) {
-			sender.sendMessage("¡ìb[Snowk]¡ìeÎ´ÕÒµ½ÊÀ½ç£¬ÇëÈ·ÈÏÊÀ½çÃûÊÇ·ñÓëÏÂÁĞÆ¥Åä");
+			sender.sendMessage("Â§b[Snowk]Â§eæœªæ‰¾åˆ°ä¸–ç•Œï¼Œè¯·ç¡®è®¤ä¸–ç•Œåæ˜¯å¦ä¸ä¸‹åˆ—åŒ¹é…");
 			List<World> worlds = Bukkit.getWorlds();
 			for (World w : worlds) {
 				sender.sendMessage("==== " + w.getName());

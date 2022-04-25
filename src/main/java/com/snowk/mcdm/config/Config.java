@@ -36,7 +36,7 @@ public class Config {
 		return mcdm.snowkPlugin.getConfig().getDouble(label);
 	}
 	public static String getString(String label) {
-		return mcdm.snowkPlugin.getConfig().getString(label).replaceAll("&", "¡ì");
+		return mcdm.snowkPlugin.getConfig().getString(label).replaceAll("&", "Â§");
 	}
 	public static boolean getBoolean(String label) {
 		return mcdm.snowkPlugin.getConfig().getBoolean(label);
