@@ -1,14 +1,13 @@
 package com.snowk.mcdm.command;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.snowk.mcdm.command.algorithm.DBSCAN;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 
-import com.snowk.mcdm.command.algorithm.DBSCAN;
+import java.util.ArrayList;
+import java.util.List;
 
 public class doDBSCAN {
 

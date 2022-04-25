@@ -1,9 +1,9 @@
 package com.snowk.mcdm;
 
-import org.bukkit.plugin.java.JavaPlugin;
 import com.snowk.mcdm.command.CommandHandler;
 import com.snowk.mcdm.command.framework.CommandFramework;
 import com.snowk.mcdm.config.Config;
+import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class mcdm extends JavaPlugin{

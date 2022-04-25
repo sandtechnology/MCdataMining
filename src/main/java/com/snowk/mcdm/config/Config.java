@@ -1,15 +1,12 @@
 package com.snowk.mcdm.config;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.util.List;
+import com.snowk.mcdm.mcdm;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
-import com.snowk.mcdm.mcdm;
+
+import java.io.*;
+import java.nio.charset.Charset;
+import java.util.List;
 
 public class Config {
 	

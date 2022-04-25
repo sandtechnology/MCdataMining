@@ -4,14 +4,14 @@ package com.snowk.mcdm.command.algorithm;
  * 源码参考： outsider0007
  * Reference: https://blog.csdn.net/qq_37667364/article/details/89683499*/
 
+import org.bukkit.Location;
+import org.bukkit.command.CommandSender;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.bukkit.Location;
-import org.bukkit.command.CommandSender;
  
 public class DBSCAN {
 	

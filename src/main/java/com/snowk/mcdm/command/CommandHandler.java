@@ -1,12 +1,10 @@
 package com.snowk.mcdm.command;
 
+import com.snowk.mcdm.command.framework.CommandFramework;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import com.snowk.mcdm.command.framework.CommandFramework;
-import com.snowk.mcdm.command.doAnalysis;
-import com.snowk.mcdm.command.doDBSCAN;
 
 public class CommandHandler extends CommandFramework {
     public CommandHandler(String label) {
